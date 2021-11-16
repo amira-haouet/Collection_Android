@@ -19,13 +19,19 @@ public class Adapter extends
 
     @NonNull
     @Override
+
+    //constructor
+
     public Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle, parent, false);
         return new MyViewHolder(v);
     }
+    ////Inflate the view & create viewholder
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public TextView n, p;
+       // findVueById
         public MyViewHolder(View view) {
             super(view);
             n= view.findViewById(R.id.name);
@@ -33,6 +39,7 @@ public class Adapter extends
         }
     }
 
+//fill ViewHolder with data
 
     @Override
     public void onBindViewHolder(@NonNull Adapter.MyViewHolder holder, int position) {
