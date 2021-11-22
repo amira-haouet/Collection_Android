@@ -21,14 +21,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager LM = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(LM);
-       Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure",                "2015");
+       Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2020",R.drawable.dora);
         movieList.add(movie);
-        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015");
+        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.drawable.dora);
         movieList.add(movie);
-        movie = new Movie("Star Wars: Episode VII - The Force Awakens",
-                "Action", "2015");
+        movie = new Movie("Star Wars: Episode VII - The Force Awakens","Action", "2015",R.drawable.dora);
         movieList.add(movie);
-        movie = new Movie("Shaun the Sheep", "Animation", "2015");
+        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.dora);
         movieList.add(movie);
       /*  movie = new Movie("The Martian", "Science Fiction & Fantasy",
                 "2015");

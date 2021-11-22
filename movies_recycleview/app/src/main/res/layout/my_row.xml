@@ -15,12 +15,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:textStyle="bold"
+        android:layout_weight="1"
         />
     <TextView
         android:id="@+id/year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
+        android:layout_weight="1"
         />
 </LinearLayout>
 <TextView
@@ -28,8 +30,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     ></TextView>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ></ImageView>
+   <!--<ImageView
+        android:id="@+id/img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+       android:src="@drawable/dora"
+        ></ImageView>-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/dora" />
 </LinearLayout>

@@ -3,6 +3,8 @@ package com.example.movies_recycleview;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,11 +28,16 @@ public class Adapter extends
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public TextView n, g,y;
+        public ImageView i;
+        public ImageView image_view;
+
         public MyViewHolder(View view) {
             super(view);
             n= view.findViewById(R.id.name);
             g= view.findViewById(R.id.genre);
             y=view.findViewById(R.id.year);
+            i=view.findViewById(R.id.img);
+
         }
     }
 
@@ -41,6 +48,8 @@ public class Adapter extends
         holder.n.setText(s.getName());
         holder.g.setText(s.getGenre());
         holder.y.setText(s.getYear());
+
+        holder.i.setImageResource(s.getImg());
     }
 
     @Override

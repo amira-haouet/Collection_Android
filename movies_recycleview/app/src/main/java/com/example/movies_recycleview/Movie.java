@@ -3,13 +3,14 @@ package com.example.movies_recycleview;
 public class Movie {
     private String year, name,genre;
     private int img;
-    public  Movie(String year,String name,String genre)
+    public  Movie(String name,String genre,String year,int img)
     {
   this.genre    =genre;
   this.year=year;
   this.name=name;
-  //this.img=img
+  this.img=img;
     }
+
 
     public String getYear() {
         return year;
@@ -33,6 +34,14 @@ public class Movie {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }
 
