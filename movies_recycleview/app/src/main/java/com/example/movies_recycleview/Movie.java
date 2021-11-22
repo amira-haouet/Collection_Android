@@ -10,7 +10,13 @@ public class Movie {
   this.name=name;
   this.img=img;
     }
-
+    public  Movie(String name,int img)
+    {
+   //     this.genre    =genre;
+      //  this.year=year;
+        this.name=name;
+        this.img=img;
+    }
 
     public String getYear() {
         return year;

@@ -27,15 +27,16 @@ public class Adapter extends
     }
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView n, g,y;
+        public TextView n;
+                //, g,y;
         public ImageView i;
         public ImageView image_view;
 
         public MyViewHolder(View view) {
             super(view);
             n= view.findViewById(R.id.name);
-            g= view.findViewById(R.id.genre);
-            y=view.findViewById(R.id.year);
+         //   g= view.findViewById(R.id.genre);
+         //   y=view.findViewById(R.id.year);
             i=view.findViewById(R.id.img);
 
         }
@@ -46,8 +47,8 @@ public class Adapter extends
     public void onBindViewHolder(@NonNull Adapter.MyViewHolder holder, int position) {
         Movie s= myList.get(position);
         holder.n.setText(s.getName());
-        holder.g.setText(s.getGenre());
-        holder.y.setText(s.getYear());
+       // holder.g.setText(s.getGenre());
+      //  holder.y.setText(s.getYear());
 
         holder.i.setImageResource(s.getImg());
     }

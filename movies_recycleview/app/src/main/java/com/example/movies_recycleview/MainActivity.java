@@ -1,6 +1,7 @@
 package com.example.movies_recycleview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,15 +22,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager LM = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(LM);
+      /*
        Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2020",R.drawable.dora);
         movieList.add(movie);
-        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.drawable.dora);
+        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015",R.drawable.insideout);
         movieList.add(movie);
-        movie = new Movie("Star Wars: Episode VII - The Force Awakens","Action", "2015",R.drawable.dora);
+        movie = new Movie("Star Wars: Episode VII - The Force Awakens","Action", "2015",R.drawable.star);
         movieList.add(movie);
-        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.dora);
+        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.shaun);
         movieList.add(movie);
-      /*  movie = new Movie("The Martian", "Science Fiction & Fantasy",
+
+     */
+
+        /*  movie = new Movie("The Martian", "Science Fiction & Fantasy",
                 "2015");
         movieList.add(movie);
         movie = new Movie("Mission: Impossible Rogue Nation", "Action",
@@ -69,6 +74,21 @@ public class MainActivity extends AppCompatActivity {
         movieList.add(movie);
         movie = new Movie("Inside Out",R.drawable.insideout);
         movieList.add(movie);*/
+
+
+
+        Movie movie = new Movie("Dora",R.drawable.dora);
+        movieList.add(movie);
+        movie = new Movie("Inside Out",R.drawable.insideout);
+        movieList.add(movie);
+        movie = new Movie("Star Wars: The Force Awakens",R.drawable.star);
+        movieList.add(movie);
+        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.shaun);
+        movieList.add(movie);
+//grid last qt
+        int numberOfColumns = 2;
+        recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
+//
         myAdapter = new Adapter(movieList);
         recyclerView.setAdapter(myAdapter);
     }
