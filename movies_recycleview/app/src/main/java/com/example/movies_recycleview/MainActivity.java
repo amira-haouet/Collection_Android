@@ -83,7 +83,9 @@ public class MainActivity extends AppCompatActivity {
         movieList.add(movie);
         movie = new Movie("Star Wars: The Force Awakens",R.drawable.star);
         movieList.add(movie);
-        movie = new Movie("Shaun the Sheep", "Animation", "2015",R.drawable.shaun);
+        movie = new Movie("Shaun the Sheep",R.drawable.shaun);
+        movieList.add(movie);
+        movie = new Movie("DArk",R.drawable.dark);
         movieList.add(movie);
 //grid last qt
         int numberOfColumns = 2;

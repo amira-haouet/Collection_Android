@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    //Fill With Array Adapter//
-
     /*  String[] tab= {"Lundi", "Mardi", "Mercredi"};
       ListView maliste;
       @Override
@@ -24,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
           ArrayAdapter a= new
                   ArrayAdapter(this,android.R.layout.simple_list_item_1, tab);
           maliste.setAdapter(a);}*/
-
     private List<Contact> stList = new ArrayList<>(); private
     RecyclerView recyclerView;
     private Adapter myAdapter;
@@ -32,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Obtain a handle to the object
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         LinearLayoutManager LM = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(LM);
