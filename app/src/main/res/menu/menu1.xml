@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:icon="@drawable/emblemok_103757"
+     android:title="TODO"
+     app:showAsAction="ifRoom"
+    >
+<menu>
+    <item android:title="option1"></item>
+    <item android:title="option2"></item>
+</menu>
+</item>
+
+    <item android:icon="@drawable/emblemok_103757"
+        android:title="TODO"
+        app:showAsAction="ifRoom"
+        >
+        <menu>
+            <item android:title="option1"></item>
+            <item android:title="option2"></item>
+        </menu>
+    </item>
+</menu>

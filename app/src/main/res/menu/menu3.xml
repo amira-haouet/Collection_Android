@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Act2"
+    android:id="@+id/act2"
+    ></item>
+    <item android:title="Settings"
+
+        android:id="@+id/settings">
+        <menu>
+            <item android:title="prametre"
+                android:id="@+id/parametre"
+                ></item>
+            <item android:title="langue"
+                android:id="@+id/langue"
+                ></item>
+        </menu>
+
+
+    </item>
+    <item android:title="Quitter"
+        android:id="@+id/quitter"
+        ></item>
+</menu>
