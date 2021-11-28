@@ -1,5 +1,12 @@
 # JavaCollectionAndroid
 
+<u>
+  <li>
+    Authentification using FireAuth
+  </li>
+  
+  <li></li>
+  </ul>
 
 
 ## Tech and Tools
