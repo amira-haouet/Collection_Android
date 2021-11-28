@@ -6,6 +6,10 @@
   </li>
   
   <li>Crud using Firebase</li>
+  
+  <li> 
+    Geocalisation using google service
+  </li>
   </ul>
 
 
