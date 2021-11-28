@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<item android:title="Home">
+<item android:title="Home"
+
+    android:id="@+id/home">
 
 </item>
+
     <item android:title="Geocalisation"
         android:icon="@mipmap/localisation"
        app:showAsAction="ifRoom"
+        android:id="@+id/geocalisation"
         ></item>
-    <item android:title="lister student"> </item>
+    <item android:title="lister student"
+        android:id="@+id/student"
+        > </item>
 
     <item
         android:title="Logout"
+        android:id="@+id/logout"
         >
 
     </item>

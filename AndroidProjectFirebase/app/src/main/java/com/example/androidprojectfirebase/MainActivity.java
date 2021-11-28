@@ -21,14 +21,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnLogOut = findViewById(R.id.btnLogout);
+      /*  btnLogOut = findViewById(R.id.btnLogout);
         mAuth = FirebaseAuth.getInstance();
 
         btnLogOut.setOnClickListener(view ->{
             mAuth.signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         });
-
+*/
     }
 
     @Override
@@ -55,15 +55,31 @@ public class MainActivity extends AppCompatActivity {
 
 // or id
         switch (item.getItemId()) {
-            case R.id.home:create();break;
+            case R.id.home:home();break;
+            case R.id.geocalisation:geo();break;
+            case R.id.logout:logout();break;
+
 
         }
         return super.onOptionsItemSelected(item);
     }
 
+    private void logout() {
+        mAuth = FirebaseAuth.getInstance();
+
+            mAuth.signOut();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+
+    }
 
 
-    private void create() {
+    private void home() {
+        Intent i = new Intent(this,Home.class );
+        startActivity(i);
+
+    }
+
+    private void geo() {
         Intent i = new Intent(this,Home.class );
         startActivity(i);
 
