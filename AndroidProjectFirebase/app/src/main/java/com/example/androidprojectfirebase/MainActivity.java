@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,5 +38,34 @@ public class MainActivity extends AppCompatActivity {
         if (user == null){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+// Inflate the menu;
+//this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.appbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+// Title
+
+// or id
+        switch (item.getItemId()) {
+            case R.id.home:create();break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+    private void create() {
+        Intent i = new Intent(this,Home.class );
+        startActivity(i);
+
     }
 }
