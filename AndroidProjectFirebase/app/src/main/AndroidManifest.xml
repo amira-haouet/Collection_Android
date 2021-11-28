@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidprojectfirebase">
 
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
- />
-    /*ACCESS_COARSE_LOCATION*/
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icon1"
@@ -14,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProjectFirebase">
+        <activity
+            android:name=".GeoActivity"
+            android:exported="false" />
         <activity
             android:name=".Home"
             android:exported="false" />
