@@ -5,7 +5,7 @@
     Authentification using FireAuth
   </li>
   
-  <li></li>
+  <li>Crud using Firebase</li>
   </ul>
 
 
