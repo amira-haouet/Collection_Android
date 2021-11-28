@@ -6,7 +6,13 @@
 </item>
     <item android:title="Geocalisation"
         android:icon="@mipmap/localisation"
-        app:showAsAction="ifRoom"
+       app:showAsAction="ifRoom"
         ></item>
     <item android:title="lister student"> </item>
+
+    <item
+        android:title="Logout"
+        >
+
+    </item>
 </menu>
