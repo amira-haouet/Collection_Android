@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void geo() {
-        Intent i = new Intent(this,Home.class );
+        Intent i = new Intent(this,GeoActivity.class );
         startActivity(i);
 
     }
