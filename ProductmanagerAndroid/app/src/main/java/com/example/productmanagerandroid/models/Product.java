@@ -1,4 +1,4 @@
-package com.example.productmanagerandroid;
+package com.example.productmanagerandroid.models;
 
 public class Product {
 
