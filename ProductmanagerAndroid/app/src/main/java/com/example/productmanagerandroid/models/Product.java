@@ -39,4 +39,13 @@ public class Product {
     public void setQuantity(Integer quantity) {
         Quantity = quantity;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
+                ", Quantity=" + Quantity +
+                '}';
+    }
 }

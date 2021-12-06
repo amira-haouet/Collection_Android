@@ -33,42 +33,58 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="25dp"
             android:hint="Quantity"
+
             android:inputType="number"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18sp"
-            android:text="Add product"
-            android:textSize="18sp"
-            android:paddingVertical="8dp"
-            android:onClick="onAdd" />
+            android:text="Add "
+            android:onClick="onAdd"
+            android:bottomRightRadius="10dp"
+            android:bottomLeftRadius="10dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            android:layout_marginRight="20dp"
+            />
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18sp"
-            android:text="Delete product"
-            android:textSize="18sp"
-            android:paddingVertical="8dp"
-            android:onClick="onDelete" />
+            android:text="Delete "
+            android:onClick="onDelete"
+            android:bottomRightRadius="10dp"
+            android:bottomLeftRadius="10dp"
+            android:topLeftRadius="10dp"
+            android:layout_marginRight="20dp"
+
+            android:topRightRadius="10dp"/>
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18sp"
-            android:text="Show products"
-            android:textSize="18sp"
-            android:paddingVertical="8dp"
-            android:onClick="onShow" />
+            android:text="Show "
+            android:onClick="onShow"
+            android:bottomRightRadius="10dp"
+            android:bottomLeftRadius="10dp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"/>
+    </LinearLayout>
 
         <TextView
             android:id="@+id/products_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Products will show here!"
-            android:paddingVertical="25dp"
+            android:text="produits "
             android:textSize="18sp"
             android:gravity="center"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            />
 
     </LinearLayout>
 
