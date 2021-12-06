@@ -8,28 +8,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBaseHandler extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "db";
 
-    // DB Version public static final String DATABASE_NAME = "product.db";
-    // DB name
-    public DataBaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+
+
+        public static final int DATABASE_VERSION = 1;
+        public static final String DATABASE_NAME = "products";
+
+        public DataBaseHandler(Context context, SQLiteDatabase.CursorFactory factory) {
+            super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase db)  {
+            db.execSQL(ProductDAO.CREATE_TABLE);
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            db.execSQL(ProductDAO.DROP_TABLE);
+            this.onCreate(db);
+        }
     }
-
-    @Override
-
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(ProductController.CREATE_TABLE);
-    }
-
-
-    @Override
-
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL(ProductController.DROP_TABLE);
-
-        onCreate(sqLiteDatabase);
-    }
-
-}

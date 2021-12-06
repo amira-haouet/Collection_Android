@@ -1,17 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/id_inp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:hint="Identifier"
+            android:inputType="numberDecimal"/>
+        <EditText
+            android:id="@+id/name_inp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Name"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/qty_inp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="25dp"
+            android:hint="Quantity"
+            android:inputType="number"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18sp"
+            android:text="Add product"
+            android:textSize="18sp"
+            android:paddingVertical="8dp"
+            android:onClick="onAdd" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18sp"
+            android:text="Delete product"
+            android:textSize="18sp"
+            android:paddingVertical="8dp"
+            android:onClick="onDelete" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18sp"
+            android:text="Show products"
+            android:textSize="18sp"
+            android:paddingVertical="8dp"
+            android:onClick="onShow" />
+
+        <TextView
+            android:id="@+id/products_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Products will show here!"
+            android:paddingVertical="25dp"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

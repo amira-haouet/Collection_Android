@@ -9,6 +9,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProductController {
 
 
@@ -51,7 +55,27 @@ public class ProductController {
             Cursor c = db.rawQuery(req, null);
             return c;
         }
+    public List<Product> getAll() {
+        List<Product> result = new ArrayList<>();
+        SQLiteDatabase db = dbHandler.getWritableDatabase();
+        String req = "SELECT * FROM products";
 
+        Cursor cursor = db.rawQuery(req, null);
+        if (cursor.getCount() == 0) return result;
+
+        while (cursor.moveToNext()) {
+            result.add(
+                    new Product(
+                            cursor.getInt(0),
+                            cursor.getString(1),
+                            cursor.getInt(2)
+                    )
+            );
+        }
+        cursor.close();
+        db.close();
+        return result;
+    }
     }
 
 
