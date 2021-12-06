@@ -27,6 +27,8 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL(ProductDAO.DROP_TABLE);
+       // db.execSQL(ProductDAO.DROP_TABLE);
+        //        this.onCreate(db);
 
         onCreate(sqLiteDatabase);
     }
