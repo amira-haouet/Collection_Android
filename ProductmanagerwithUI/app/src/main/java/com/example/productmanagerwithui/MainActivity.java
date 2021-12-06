@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         add = findViewById(R.id.add);
         show = findViewById(R.id.show);
         delete = findViewById(R.id.delete);
+        dao = new ProductController(getApplicationContext());
 
 
     }
