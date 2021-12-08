@@ -35,11 +35,7 @@ public class MainActivity extends AppCompatActivity {
         productDAO = new ProductDAO(getApplicationContext());
     }
 
-    private void clearInputs() {
-        idEt.setText("");
-        nameEt.setText("");
-        quantityEt.setText("");
-    }
+
 
     public void onAdd(View view) {
 
@@ -51,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d("MainActivity", "Adding: " + product.toString());
             productDAO.insert(product);
-            this.clearInputs();
             this.onShow(view);
 
     }
@@ -61,16 +56,15 @@ public class MainActivity extends AppCompatActivity {
             Log.d("MainActivity", "Deleting");
             Integer id = Integer.valueOf(idEt.getText().toString());
             productDAO.delete(id);
-            this.clearInputs();
             this.onShow(view);
 
     }
 
     public void onShow(View view) {
 
-            Log.d("MainActivity", "Showing");
+           // Log.d("MainActivity", "Showing");
             List<Product> myList = productDAO.getAll();
-            Log.d("MainActivity", myList.toString());
+           // Log.d("MainActivity", myList.toString());
             productsTv.setText(myList.toString());
 
     }

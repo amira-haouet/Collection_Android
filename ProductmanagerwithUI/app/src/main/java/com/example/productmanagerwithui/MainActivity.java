@@ -1,108 +1,156 @@
 package com.example.productmanagerwithui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    EditText idet, nameet, quantiteet;
-    Button add, show, delete;
-    ProductController dao;
-    TextView text;
-
+    EditText Sname, name, id;
+    TextView texte;
+    StudentDAO DAO;
+    DataBaseHandler databasehandler;
+    RecyclerView recyle ;
+    Adapter myAdapter;
+    Button add,delete,show,update,search;
+    RadioButton ti, dsi, rsi;
+    String test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DAO = new StudentDAO(this);
 
 
-        idet = findViewById(R.id.id);
-        nameet = findViewById(R.id.name);
-        quantiteet = findViewById(R.id.quantite);
+        id = findViewById(R.id.id);
+        add = findViewById(R.id.btn1);
+        delete = findViewById(R.id.btn3);
+        show = findViewById(R.id.btn2);
+        search= findViewById(R.id.btn4);
+        update = findViewById(R.id.btn5);
+        Sname = findViewById(R.id.nom);
+        name = findViewById(R.id.prenom);
+        ti = findViewById(R.id.radio1);
+        dsi = findViewById(R.id.radio2);
+        rsi = findViewById(R.id.radio3);
+        recyle = findViewById(R.id.recyle);
 
-        add = findViewById(R.id.add);
-        show = findViewById(R.id.show);
-        delete = findViewById(R.id.delete);
-        dao = new ProductController(getApplicationContext());
+
+
+
+
+
+
+
 
 
     }
 
-    public void addProd(View view) {
 
 
-      /*  Product p = new Product(
-                Integer.parseInt(String.valueOf(id.getText())), String.valueOf(name.getText()),
-
-                Integer.parseInt(String.valueOf(quantite.getText())));
-        System.out.println(p);
 
 
-*/
-        Integer id = Integer.valueOf(idet.getText().toString());
-        String name = nameet.getText().toString();
-        Integer quantity = Integer.valueOf(quantiteet.getText().toString());
 
-        Product product = new Product(id, name, quantity);
 
-        Log.d("MainActivity", "Adding: " + product.toString());
-        dao.insertdata(product);
-        this.show(view);
+    public void modify_student(View view) {
+        if(ti.isChecked()){
+            test = "ti";
+        }
+        if(dsi.isChecked()){
+            test = "dsi";
+        }
+
+        if(rsi.isChecked()){
+            test = "rsi";
+        }
+        Etudiant p = new Etudiant();
+        p.setCls(test);
+        p.setSname(Sname.getText().toString());
+        p.setFname(name.getText().toString());
+        p.setId(Integer.parseInt(id.getText().toString()));
+        DAO.updateData(p);
+
     }
 
-    public void deletProd(View view) {
-        dao.deletedata(Integer.parseInt(String.valueOf(idet.getText())));
+    public void search_student(View view) {
+        String result;
+        result = DAO.findData(Integer.parseInt(id.getText().toString()));
+
+
+        List<Etudiant> prodList = new ArrayList<Etudiant>();
+        Etudiant prod = new Etudiant(result,"","dsi");
+        prodList.add(prod);
+        LinearLayoutManager LM = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
+        recyle.setLayoutManager(LM);
+
+
+        myAdapter = new Adapter(prodList);
+        recyle.setAdapter(myAdapter);
+
 
     }
 
-    String x = "";
-    public void deletprod(View view) {
-        try {
-            Log.d("MainActivity", "Deleting");
-            Integer id = Integer.valueOf(idet.getText().toString());
-            dao.deletedata(id);
-            this.show(view);
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            System.err.println("Could not delete product!");
-        }
+    public void delete_student(View view) {
+
+        DAO.deletedata(Integer.parseInt(id.getText().toString()));
+
     }
-  /*  public void lister() {
-        Cursor c = dao.showdata();
-        if (c.getCount() == 0) {   //empty
+
+    public void show_all(View view) {
+        List<Etudiant> prodList = new ArrayList<Etudiant>();
+
+        LinearLayoutManager LM = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
+        recyle.setLayoutManager(LM);
+        //myAdapter = new Adapter(prodList);
+        //recyle.setAdapter(myAdapter);
+        Cursor c=DAO.showdata();
+        if( c.getCount()==0 ){
+            //empty
         }
-        while
-        (c.moveToNext()) {
+        else{
+            while (c.moveToNext()) {
+                Etudiant prod1 = new Etudiant();
+                String a= c.getString(1);
+                prod1.setFname(a);
+                String cc =  c.getString(2);
+                prod1.setSname(cc);
+                String cls = c.getString(3);
+                prod1.setCls(cls);
+                prodList.add(prod1);
+            }}
+        myAdapter = new Adapter(prodList);
+        recyle.setAdapter(myAdapter);
+    }
 
-            text.setText(
-                    String.valueOf(c.getInt(0) + "" +
-                            c.getString(1) + "" +
-                            c.getInt(2)) + ""
-            );
-
+    public void add_student(View view) {
+        if(ti.isChecked()){
+            test = "ti";
         }
-    }*/
-
-
-    public void show(View view) {
-        try {
-            Log.d("MainActivity", "Showing");
-            List<Product> myList = dao.getAll();
-            Log.d("MainActivity", myList.toString());
-            text.setText(myList.toString());
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            System.err.println("Could not show products!");
+        if(dsi.isChecked()){
+            test = "dsi";
         }
+
+        if(rsi.isChecked()){
+            test = "rsi";
+        }
+        Etudiant p = new Etudiant();
+        p.setCls(test);
+        p.setSname(Sname.getText().toString());
+        p.setFname(name.getText().toString());
+        DAO.insertdata(p);
     }
 }
-
-
