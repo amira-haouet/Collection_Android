@@ -14,16 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProjectFirebase">
         <activity
-            android:name=".GeoActivity"
+            android:name=".screens.GeoActivity"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".screens.Home"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".service.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".service.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

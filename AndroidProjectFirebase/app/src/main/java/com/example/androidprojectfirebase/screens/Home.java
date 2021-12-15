@@ -1,8 +1,10 @@
-package com.example.androidprojectfirebase;
+package com.example.androidprojectfirebase.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.androidprojectfirebase.R;
 
 public class Home extends AppCompatActivity {
 

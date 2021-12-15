@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.example.androidprojectfirebase.screens.GeoActivity;
+import com.example.androidprojectfirebase.screens.Home;
+import com.example.androidprojectfirebase.service.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -74,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void home() {
-        Intent i = new Intent(this,Home.class );
+        Intent i = new Intent(this, Home.class );
         startActivity(i);
 
     }
 
     private void geo() {
-        Intent i = new Intent(this,GeoActivity.class );
+        Intent i = new Intent(this, GeoActivity.class );
         startActivity(i);
 
     }

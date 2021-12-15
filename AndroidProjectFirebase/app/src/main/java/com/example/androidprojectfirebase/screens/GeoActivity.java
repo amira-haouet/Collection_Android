@@ -1,4 +1,4 @@
-package com.example.androidprojectfirebase;
+package com.example.androidprojectfirebase.screens;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.androidprojectfirebase.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
