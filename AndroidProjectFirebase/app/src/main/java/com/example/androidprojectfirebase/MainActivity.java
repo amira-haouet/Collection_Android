@@ -9,10 +9,19 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.example.androidprojectfirebase.models.model;
+import com.example.androidprojectfirebase.screens.GeoActivity;
+import com.example.androidprojectfirebase.screens.Home;
 import com.example.androidprojectfirebase.service.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.View;
+import android.widget.SearchView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     Button btnLogOut;
