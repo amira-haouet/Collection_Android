@@ -96,8 +96,31 @@ import com.google.firebase.database.FirebaseDatabase;
 */
 
 
+package com.example.demofirebasetorecycler;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.SearchView;
+import android.widget.Toast;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+public class MainActivity extends AppCompatActivity
+{
     RecyclerView recview;
     myadapter adapter;
     FloatingActionButton fb;
@@ -108,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Search here..");
 
-        recview = (RecyclerView) findViewById(R.id.recview);
+        recview=(RecyclerView)findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<model> options =
@@ -116,14 +139,14 @@ public class MainActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("students"), model.class)
                         .build();
 
-        adapter = new myadapter(options);
+        adapter=new myadapter(options);
         recview.setAdapter(adapter);
 
-        fb = (FloatingActionButton) findViewById(R.id.add);
+        fb=(FloatingActionButton)findViewById(R.id.add);
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), adddata.class));
+                startActivity(new Intent(getApplicationContext(),adddata.class));
             }
         });
 
@@ -143,14 +166,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.searchmenu, menu);
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.searchmenu,menu);
 
-        MenuItem item = menu.findItem(R.id.search);
+        MenuItem item=menu.findItem(R.id.search);
 
-        SearchView searchView = (SearchView) item.getActionView();
+        SearchView searchView=(SearchView)item.getActionView();
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+        {
             @Override
             public boolean onQueryTextSubmit(String s) {
 
@@ -168,16 +193,16 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void processsearch(String s) {
+    private void processsearch(String s)
+    {
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("students").orderByChild("course").startAt(s).endAt(s + "\uf8ff"), model.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("students").orderByChild("course").startAt(s).endAt(s+"\uf8ff"), model.class)
                         .build();
 
-        adapter = new myadapter(options);
+        adapter=new myadapter(options);
         adapter.startListening();
         recview.setAdapter(adapter);
 
     }
-
-}
+}}
