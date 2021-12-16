@@ -18,13 +18,13 @@
             android:name=".GeoActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.Home"
+            android:name=".Home"
             android:exported="false" />
         <activity
-            android:name=".service.RegisterActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".service.LoginActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

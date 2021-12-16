@@ -17,7 +17,8 @@ import com.example.androidprojectfirebase.controllers.adddata;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
-import com.example.androidprojectfirebase.service.myadapter;
+
+
 /*public class MainActivity extends AppCompatActivity {
 
     Button btnLogOut;

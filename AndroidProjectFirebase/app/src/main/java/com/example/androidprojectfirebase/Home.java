@@ -1,4 +1,4 @@
-package com.example.androidprojectfirebase.screens;
+package com.example.androidprojectfirebase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
