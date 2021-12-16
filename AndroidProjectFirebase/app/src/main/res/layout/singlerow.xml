@@ -29,6 +29,8 @@
                 app:civ_border_color="#FF000000"
                 />
 
+
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="111dp"
