@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.SearchView;
 
-import com.example.androidprojectfirebase.controllers.adddata;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
@@ -96,7 +95,6 @@ import com.google.firebase.database.FirebaseDatabase;
 */
 
 
-package com.example.demofirebasetorecycler;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -205,4 +203,4 @@ public class MainActivity extends AppCompatActivity
         recview.setAdapter(adapter);
 
     }
-}}
+}
