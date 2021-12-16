@@ -12,6 +12,7 @@ import com.example.androidprojectfirebase.models.model;
 import com.example.androidprojectfirebase.screens.GeoActivity;
 import com.example.androidprojectfirebase.screens.Home;
 import com.example.androidprojectfirebase.service.LoginActivity;
+import com.example.androidprojectfirebase.service.myadapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import androidx.recyclerview.widget.LinearLayoutManager;
