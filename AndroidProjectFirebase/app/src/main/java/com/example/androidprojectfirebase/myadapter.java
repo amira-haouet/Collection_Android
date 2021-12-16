@@ -30,7 +30,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewholder>
 {
-    private Object DialogPlus;
 
     public myadapter(@NonNull FirebaseRecyclerOptions<model> options)
     {
