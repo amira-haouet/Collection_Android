@@ -22,7 +22,7 @@ import android.widget.SearchView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
-public class MainActivity extends AppCompatActivity {
+/*public class MainActivity extends AppCompatActivity {
 
     Button btnLogOut;
     FirebaseAuth mAuth;
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+*/
 
-/*
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -195,4 +195,3 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-*/
