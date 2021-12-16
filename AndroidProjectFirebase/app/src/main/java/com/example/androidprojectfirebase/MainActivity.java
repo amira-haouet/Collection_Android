@@ -6,31 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.widget.SearchView;
 
+import com.example.androidprojectfirebase.controllers.adddata;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
-import com.example.androidprojectfirebase.models.model;
-import com.example.androidprojectfirebase.screens.GeoActivity;
-import com.example.androidprojectfirebase.screens.Home;
-import com.example.androidprojectfirebase.service.LoginActivity;
 import com.example.androidprojectfirebase.service.myadapter;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.View;
-import android.widget.SearchView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.FirebaseDatabase;
 /*public class MainActivity extends AppCompatActivity {
 
     Button btnLogOut;
@@ -131,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new myadapter(options);
         recview.setAdapter(adapter);
 
-        fb = (FloatingActionButton) findViewById(R.id.fadd);
+        fb = (FloatingActionButton) findViewById(R.id.add);
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

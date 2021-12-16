@@ -1,30 +1,23 @@
 package com.example.androidprojectfirebase.service;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.androidprojectfirebase.models.model;
+import com.example.androidprojectfirebase.model;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.DialogPlusBuilder;
@@ -32,8 +25,6 @@ import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.logging.Handler;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

@@ -1,4 +1,4 @@
-package com.example.androidprojectfirebase.models;
+package com.example.androidprojectfirebase;
 
 
 public class model
