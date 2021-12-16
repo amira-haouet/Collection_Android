@@ -1,4 +1,5 @@
 package com.example.androidprojectfirebase;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
@@ -37,7 +38,9 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final model model)
+ //   protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final model model)
+
+    protected void onBindViewHolder(@NonNull final myviewholder holder, @SuppressLint("RecyclerView") final int position, @NonNull final model model)
     {
         holder.name.setText(model.getName());
         holder.course.setText(model.getCourse());
