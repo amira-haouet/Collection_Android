@@ -11,14 +11,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-/*public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     Button btnLogOut;
     FirebaseAuth mAuth;
@@ -92,7 +95,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
     }
 }
-*/
+/*
 
 
 
@@ -203,4 +206,4 @@ public class MainActivity extends AppCompatActivity
         recview.setAdapter(adapter);
 
     }
-}
+}*/
