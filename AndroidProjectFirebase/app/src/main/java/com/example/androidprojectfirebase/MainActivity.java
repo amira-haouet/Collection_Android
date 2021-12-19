@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void geo() {
-        Intent i = new Intent(this, GeoActivity.class );
+        Intent i = new Intent(this, GettCurrentLocation.class );
         startActivity(i);
 
     }
