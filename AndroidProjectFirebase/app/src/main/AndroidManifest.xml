@@ -18,7 +18,7 @@
         android:theme="@style/Theme.AndroidProjectFirebase">
 
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB8Zp_xB5VjC-sgVqsPeLxOyxRnfvqCasE"/>
+            android:value="AIzaSyAp5XDQnQinuIS1R0VVDWw1Y0AxIpwl_es"/>
 
         <activity
             android:name=".GettCurrentLocation"
