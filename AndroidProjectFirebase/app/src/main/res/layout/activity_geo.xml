@@ -30,4 +30,3 @@ tools:context=".GeoActivity">
     android:layout_height="wrap_content"/>
 
 </LinearLayout>
-  

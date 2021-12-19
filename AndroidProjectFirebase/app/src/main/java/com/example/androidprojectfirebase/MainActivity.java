@@ -74,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.logout:
                 logout();
                 break;
-
+            case R.id.position:
+                currentPosition();
+                break;
 
         }
         return super.onOptionsItemSelected(item);
@@ -97,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void geo() {
         Intent i = new Intent(this, GettCurrentLocation.class);
+        startActivity(i);
+
+    }
+
+    private void currentPosition() {
+        Intent i = new Intent(this, GeoActivity.class);
         startActivity(i);
 
     }

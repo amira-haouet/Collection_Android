@@ -54,9 +54,9 @@ public class GeoActivity extends AppCompatActivity implements LocationListener{
             textView_location = findViewById(R.id.text_location);
             button_location = findViewById(R.id.button_location);
             //Runtime permissions
-            if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+            if (ContextCompat.checkSelfPermission(GeoActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED){
-                ActivityCompat.requestPermissions(MainActivity.this,new String[]{
+                ActivityCompat.requestPermissions(GeoActivity.this,new String[]{
                         Manifest.permission.ACCESS_FINE_LOCATION
                 },100);
             }
@@ -79,7 +79,7 @@ public class GeoActivity extends AppCompatActivity implements LocationListener{
 
             try {
                 locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,MainActivity.this);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,GeoActivity.this);
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -91,7 +91,7 @@ public class GeoActivity extends AppCompatActivity implements LocationListener{
         public void onLocationChanged(Location location) {
             Toast.makeText(this, ""+location.getLatitude()+","+location.getLongitude(), Toast.LENGTH_SHORT).show();
             try {
-                Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
+                Geocoder geocoder = new Geocoder(GeoActivity.this, Locale.getDefault());
                 List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
                 String address = addresses.get(0).getAddressLine(0);
 
