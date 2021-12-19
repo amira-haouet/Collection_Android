@@ -76,10 +76,9 @@ public class GettCurrentLocation extends AppCompatActivity {
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCo mpat#requestPermissions for more details.
-            Task<Location> tasks=client.getLastLocation()
 
-            return;
-        }
+        //    return;
+     //   }
 
         Task<Location> task = client.getLastLocation();
         task.addOnSuccessListener(new OnSuccessListener<Location>() {
@@ -98,4 +97,4 @@ public class GettCurrentLocation extends AppCompatActivity {
             }
         });
     }
-}
+}}
