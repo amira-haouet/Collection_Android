@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProjectFirebase">
         <activity
+            android:name=".GettCurrentLocation"
+            android:exported="false" />
+        <activity
             android:name=".GeoActivity"
             android:exported="false" />
         <activity
