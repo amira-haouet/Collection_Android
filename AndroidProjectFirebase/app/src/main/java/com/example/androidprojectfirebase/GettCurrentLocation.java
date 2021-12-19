@@ -1,10 +1,5 @@
 package com.example.androidprojectfirebase;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -38,15 +33,13 @@ import java.util.Map;
 
 public class GettCurrentLocation extends AppCompatActivity {
 
-
-
     SupportMapFragment smf;
     FusedLocationProviderClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_gett_current_location);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         smf = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map);
@@ -56,7 +49,6 @@ public class GettCurrentLocation extends AppCompatActivity {
                 .withPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                 .withListener(new PermissionListener() {
                     @Override
-
                     public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
                         getmylocation();
                     }
