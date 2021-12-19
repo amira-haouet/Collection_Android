@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:text="Login here"
-                android:textColor="@color/teal_700"
+                android:textColor="@color/Kelly_Green"
                 android:textStyle="bold"
                 android:textSize="20sp"/>
 
