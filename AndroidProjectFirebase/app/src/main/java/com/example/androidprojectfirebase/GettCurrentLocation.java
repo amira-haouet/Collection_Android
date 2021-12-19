@@ -87,11 +87,11 @@ public class GettCurrentLocation extends AppCompatActivity {
                 smf.getMapAsync(new OnMapReadyCallback() {
                     @Override
                     public void onMapReady(GoogleMap googleMap) {
-                        LatLng latLng=new LatLng(location.getLatitude(),location.getLongitude());
-                        MarkerOptions markerOptions=new MarkerOptions().position(latLng).title("ena hne...!!");
+                        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                        MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("ena hne...!!");
 
                         googleMap.addMarker(markerOptions);
-                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,17));
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
                     }
                 });
             }

@@ -17,32 +17,30 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class adddata extends AppCompatActivity
-{
-    EditText name,course,email,purl;
-    Button submit,back;
+public class adddata extends AppCompatActivity {
+    EditText name, course, email, purl;
+    Button submit, back;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adddata);
 
-        name=(EditText)findViewById(R.id.add_name);
-        email=(EditText)findViewById(R.id.add_email);
-        course=(EditText)findViewById(R.id.add_course);
-        purl=(EditText)findViewById(R.id.add_purl);
+        name = (EditText) findViewById(R.id.add_name);
+        email = (EditText) findViewById(R.id.add_email);
+        course = (EditText) findViewById(R.id.add_course);
+        purl = (EditText) findViewById(R.id.add_purl);
 
-        back=(Button)findViewById(R.id.add_back);
+        back = (Button) findViewById(R.id.add_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
         });
 
-        submit=(Button)findViewById(R.id.add_submit);
+        submit = (Button) findViewById(R.id.add_submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,13 +49,12 @@ public class adddata extends AppCompatActivity
         });
     }
 
-    private void processinsert()
-    {
-        Map<String,Object> map=new HashMap<>();
-        map.put("name",name.getText().toString());
-        map.put("course",course.getText().toString());
-        map.put("email",email.getText().toString());
-        map.put("purl",purl.getText().toString());
+    private void processinsert() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", name.getText().toString());
+        map.put("course", course.getText().toString());
+        map.put("email", email.getText().toString());
+        map.put("purl", purl.getText().toString());
         FirebaseDatabase.getInstance().getReference().child("students").push()
                 .setValue(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -67,14 +64,13 @@ public class adddata extends AppCompatActivity
                         course.setText("");
                         email.setText("");
                         purl.setText("");
-                        Toast.makeText(getApplicationContext(),"Inserted Successfully",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
-                    public void onFailure(@NonNull Exception e)
-                    {
-                        Toast.makeText(getApplicationContext(),"Could not insert",Toast.LENGTH_LONG).show();
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "Could not insert", Toast.LENGTH_LONG).show();
                     }
                 });
 

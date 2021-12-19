@@ -37,34 +37,34 @@ public class RegisterActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        btnRegister.setOnClickListener(view ->{
+        btnRegister.setOnClickListener(view -> {
             createUser();
         });
 
-        tvLoginHere.setOnClickListener(view ->{
+        tvLoginHere.setOnClickListener(view -> {
 
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         });
     }
 
-    private void createUser(){
+    private void createUser() {
         String email = etRegEmail.getText().toString();
         String password = etRegPassword.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             etRegEmail.setError("Email cannot be empty");
             etRegEmail.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
+        } else if (TextUtils.isEmpty(password)) {
             etRegPassword.setError("Password cannot be empty");
             etRegPassword.requestFocus();
-        }else{
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        } else {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                    }else{
+                    } else {
                         Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }

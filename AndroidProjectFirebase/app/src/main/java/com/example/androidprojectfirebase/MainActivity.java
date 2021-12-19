@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-      btnLogOut = findViewById(R.id.btnLogout);
+        btnLogOut = findViewById(R.id.btnLogout);
         mAuth = FirebaseAuth.getInstance();
 
-        btnLogOut.setOnClickListener(view ->{
+        btnLogOut.setOnClickListener(view -> {
             mAuth.signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         });
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
-        if (user == null){
+        if (user == null) {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
     }
@@ -65,9 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
 // or id
         switch (item.getItemId()) {
-            case R.id.home:home();break;
-            case R.id.geocalisation:geo();break;
-            case R.id.logout:logout();break;
+            case R.id.home:
+                home();
+                break;
+            case R.id.geocalisation:
+                geo();
+                break;
+            case R.id.logout:
+                logout();
+                break;
 
 
         }
@@ -77,20 +83,20 @@ public class MainActivity extends AppCompatActivity {
     private void logout() {
         mAuth = FirebaseAuth.getInstance();
 
-            mAuth.signOut();
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        mAuth.signOut();
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
 
     }
 
 
     private void home() {
-        Intent i = new Intent(this, Home.class );
+        Intent i = new Intent(this, Home.class);
         startActivity(i);
 
     }
 
     private void geo() {
-        Intent i = new Intent(this, GettCurrentLocation.class );
+        Intent i = new Intent(this, GettCurrentLocation.class);
         startActivity(i);
 
     }
