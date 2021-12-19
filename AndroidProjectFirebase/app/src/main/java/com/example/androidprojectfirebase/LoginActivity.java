@@ -3,6 +3,7 @@ package com.example.androidprojectfirebase;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText etLoginEmail;
@@ -40,29 +42,29 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(view -> {
             loginUser();
         });
-        tvRegisterHere.setOnClickListener(view ->{
+        tvRegisterHere.setOnClickListener(view -> {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
     }
 
-    private void loginUser(){
+    private void loginUser() {
         String email = etLoginEmail.getText().toString();
         String password = etLoginPassword.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             etLoginEmail.setError("Email cannot be empty");
             etLoginEmail.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
+        } else if (TextUtils.isEmpty(password)) {
             etLoginPassword.setError("Password cannot be empty");
             etLoginPassword.requestFocus();
-        }else{
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        } else {
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         Toast.makeText(LoginActivity.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    }else{
+                    } else {
                         Toast.makeText(LoginActivity.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
