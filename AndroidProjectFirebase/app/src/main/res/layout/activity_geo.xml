@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".GeoActivity">
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:orientation="vertical"
+android:layout_gravity="center"
+android:gravity="center"
+android:layout_height="match_parent"
+tools:context=".GeoActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<ImageView
+    android:src="@drawable/common_google_signin_btn_icon_dark_focused"
+    android:layout_width="200dp"
+    android:layout_height="200dp"/>
+
+<TextView
+    android:id="@+id/text_location"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_margin="10dp"
+    android:text="Current Location"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+<Button
+    android:id="@+id/button_location"
+    android:text="Get Location"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+</LinearLayout>
+  
