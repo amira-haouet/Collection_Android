@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class adddata extends AppCompatActivity {
+public class Adddata extends AppCompatActivity {
     EditText name, course, email, purl;
     Button submit, back;
 
