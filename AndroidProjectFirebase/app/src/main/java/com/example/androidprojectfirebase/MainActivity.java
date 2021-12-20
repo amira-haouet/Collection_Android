@@ -10,6 +10,46 @@ import android.view.MenuItem;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.SearchView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.SearchView;
+import android.widget.Toast;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
@@ -19,7 +59,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
-
+/*
 
 public class MainActivity extends AppCompatActivity {
 
@@ -109,30 +149,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
-/*
+*/
 
 
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.SearchView;
-import android.widget.Toast;
-
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -157,7 +177,7 @@ public class MainActivity extends AppCompatActivity
         adapter=new myadapter(options);
         recview.setAdapter(adapter);
 
-        fb=(FloatingActionButton)findViewById(R.id.add);
+        fb=(FloatingActionButton)findViewById(R.id.fadd);
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -220,4 +240,4 @@ public class MainActivity extends AppCompatActivity
         recview.setAdapter(adapter);
 
     }
-}*/
+}
