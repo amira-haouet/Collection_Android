@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
     android:elevation="5dp"
+    app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
@@ -20,15 +20,13 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@mipmap/ic_launcher"
                 android:layout_gravity="center_vertical"
-                android:id="@+id/img1"
-                app:civ_border_width="2dp"
+                android:src="@mipmap/ic_launcher"
                 app:civ_border_color="#FF000000"
-                />
-
+                app:civ_border_width="2dp" />
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -68,6 +66,7 @@
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,13 +79,12 @@
                 android:src="@drawable/edit" />
 
             <ImageView
+                android:id="@+id/deleteicon"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:id="@+id/deleteicon"
-                android:src="@drawable/delete"/>
+                android:src="@drawable/delete" />
         </LinearLayout>
     </LinearLayout>
-
 
 
 </androidx.cardview.widget.CardView>
