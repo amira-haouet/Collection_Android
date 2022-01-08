@@ -1,81 +1,67 @@
-package com.example.blood_donation;
+package com.example.tddonneur;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public class DonneurDAO {
-    public static final String CREATE_TABLE = "create table blooddonation ( id INTEGER " +
-            "PRIMARY KEY AUTOINCREMENT NOT NULL, name TEXT, groupesanguin TEXT, state Boolean);" ;
-
-    public static final String DROP_TABLE="DROP TABLE IF EXISTS blooddonation ";
-
-    public DataBaseHandler dbHandler;
-
-    //Constructor
-    public DonneurDAO(Context context) {
-        dbHandler = new DataBaseHandler(context,"", null,1);
+public class DonneurDaO {
+    String TABLE_NAME="donneur";
+    DATAbaseOpenHelper hanlder;
+//id INTEGER PRIMARY KEY, name TEXT, groupe TEXT, etat BOOL
+    public DonneurDaO(Context context) {
+        // this.hanlder = hanlder;
+        hanlder = new DATAbaseOpenHelper(context,"", null,1);
     }
 
-    public void insertdata(Donneur d){
-        SQLiteDatabase db = dbHandler.getWritableDatabase();
+    public void ajouter(Donneur p) {
+        SQLiteDatabase db = hanlder.getWritableDatabase();
         ContentValues values = new ContentValues();
-
-        values.put("id",d.getId());
-        values.put("name",d.getNom());
-        values.put("groupesanguin",d.getGroupesanguin());
-        values.put("state",d.getState());
-        db.insert("blooddonation", null, values);
-        db.close();
+        values.put("id" , p.getId());
+        values.put("name", p.getNom());
+        values.put("groupe", p.getGroupe());
+        values.put("etat", p.getEtat());
+        // Insertion Ligne (Row)
+        db.insert(TABLE_NAME, null, values);
+        db.close(); // fermer la connection BD
     }
-
-
-    public Cursor showdata(){
-        SQLiteDatabase db = dbHandler.getReadableDatabase();
-        String req = "SELECT * FROM blooddonation";
-        Cursor c = db.rawQuery(req, null);
+    public void suppression(Integer i) {
+        SQLiteDatabase db = hanlder.getWritableDatabase();
+        db.delete(TABLE_NAME,"id='"+i+"'",null);
+    }
+    public Cursor afficher()
+    {
+        SQLiteDatabase db = hanlder.getReadableDatabase();
+        String message="";
+        Cursor c=db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+//We can test the c.getCount()==0 
+      /* while (c.moveToNext()) {
+             message=message+ c.getInt(0) + c.getString(1)+c.getInt(2)+"____";
+       }*/
         return c;
     }
-    public void updateData(Donneur d,Integer i){
-        d=findData(i);
-        SQLiteDatabase db = dbHandler.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("id",d.getId());
-        values.put("name",d.getNom());
-        values.put("groupesanguin",d.getGroupesanguin());
-        values.put("state",d.getState());
-        db.update("blooddonation",values,"id=?",new String[]{d.getId().toString()});
-        db.close();
-    }
+    public void modifier(Integer i, Donneur p) {
+        SQLiteDatabase db = hanlder.getWritableDatabase();
+        ContentValues v = new ContentValues();
+        v.put("id" ,p.getId());
+        v.put("name", p.getNom());
+        v.put("groupe", p.getGroupe());
+        v.put("etat", p.getEtat());
+        db.update(TABLE_NAME,v, "id='"+i+"'", null);
 
-    public void deletedata(Integer first){
-        SQLiteDatabase db = dbHandler.getWritableDatabase();
-        db.delete("etudiant","id="+first+"",null);
-        db.close();
     }
-
-    public Donneur findData(Integer first){
-        SQLiteDatabase db = dbHandler.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from blooddonation where id = ?", new String[] {first.toString()});
-      /*  if (cursor != null) {
-            cursor.moveToFirst();
+    public Donneur chercher(Integer i)
+    {
+        SQLiteDatabase db = hanlder.getReadableDatabase();
+        Donneur p = null;
+        //Cursor c=db.rawQuery("SELECT * FROM product where id='"+i+"'",null);
+        Cursor c = db.rawQuery("SELECT * FROM donneur where id=?", new String[] { i + "" });
+//We can test the c.getCount()==0 
+        while (c.moveToNext()) {
+            //message=message+ c.getInt(0) + c.getString(1)+c.getInt(2)+"____";
+            p=new Donneur(c.getInt(0),c.getString(1),c.getString(2),c.getInt(3));
         }
-        String name= cursor.getString(0);
 
-        String lastName= cursor.getString(1);
-*/
-        Donneur d= new Donneur(cursor.getInt(0),cursor.getString(1),
-
-                cursor.getString(2),Boolean.parseBoolean(cursor.getString(4)));
-
-        db.close();
-        return d;
+        return p;
     }
-
-
-
 }
-
-
-
