@@ -1,4 +1,4 @@
-package com.example.tddonneur;
+package com.example.blood_donation;
 
 import android.content.ContentValues;
 import android.content.Context;

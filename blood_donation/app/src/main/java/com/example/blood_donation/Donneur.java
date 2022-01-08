@@ -1,4 +1,4 @@
-package com.example.tddonneur;
+package com.example.blood_donation;
 
 public class Donneur {
     String nom, groupe;

@@ -1,4 +1,4 @@
-package com.example.tddonneur;
+package com.example.blood_donation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
