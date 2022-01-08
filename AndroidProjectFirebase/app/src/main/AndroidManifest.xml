@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidprojectfirebase">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -17,14 +16,14 @@
         <activity
             android:name=".Adddata"
             android:exported="false" />
-        <!--
           <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB8Zp_xB5VjC-sgVqsPeLxOyxRnfvqCasE"/>
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCBNcuQEiSOZtKw4V0vOZgDr_YD1ye4PHQ" />
+        <!--
 
+  <meta-data
+      android:name="com.google.android.geo.API_KEY"
+      android:value="AIzaSyCBNcuQEiSOZtKw4V0vOZgDr_YD1ye4PHQ" />
+-->
         <activity
             android:name=".GettCurrentLocation"
             android:exported="false" />
