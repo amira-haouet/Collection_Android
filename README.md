@@ -1,6 +1,6 @@
 # JavaCollectionAndroid
 
-
+some android collections, simple native android apps
 
 ## Tech and Tools
   <img src="https://img.icons8.com/color/48/000000/android-studio--v2.png"/>&nbsp; &nbsp;
