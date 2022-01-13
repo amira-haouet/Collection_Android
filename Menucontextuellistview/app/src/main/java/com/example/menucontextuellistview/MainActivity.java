@@ -16,9 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
     ArrayList<String> contactList = new ArrayList<String>(
             Arrays.asList("ali ben salah", "amira haouet", "fuoulen ben foulen", "xxx xx ")
     );
+
+
     ListView contactListview;
 
     @Override
