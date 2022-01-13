@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Les Intents Implicites</name>
+	<name>app3</name>
 	<comment>Project Les Intents Implicites created by Buildship.</comment>
 	<projects>
 	</projects>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1637659776698</id>
+			<id>0</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

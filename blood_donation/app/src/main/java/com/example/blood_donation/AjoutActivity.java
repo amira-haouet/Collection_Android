@@ -13,13 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-
 public class AjoutActivity extends AppCompatActivity {
-DonneurDaO dao;
-EditText nom, id;
-RadioButton r1, r2;
-Button btn;
-Spinner spinner;
+    DonneurDaO dao;
+    EditText nom, id;
+    RadioButton r1, r2;
+    Button btn;
+    Spinner spinner;
     String[] tableau= { "A+", "A-", "o+", "o-"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,23 +34,23 @@ Spinner spinner;
         ArrayAdapter a=new ArrayAdapter(this,android.R.layout.simple_list_item_1, tableau);
 //Create Adapter
         spinner.setAdapter(a);//Bind Adapter to View
-btn.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        String grp=tableau[spinner.getSelectedItemPosition()];
-        Integer etat=1;
-        if(r2.isChecked())
-        {etat=0;}
-        String n=nom.getText().toString();
-        Integer i=Integer.valueOf(id.getText().toString());
-        Donneur x=new Donneur(i,n,grp,etat);
-        dao.ajouter(x);
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
-});
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String grp=tableau[spinner.getSelectedItemPosition()];
+                Integer etat=1;
+                if(r2.isChecked())
+                {etat=0;}
+                String n=nom.getText().toString();
+                Integer i=Integer.valueOf(id.getText().toString());
+                Donneur x=new Donneur(i,n,grp,etat);
+                dao.ajouter(x);
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
         /// Donneur x=new Donneur(1,"donneur1","A+",1);
-       // dao.ajouter(x);
+        // dao.ajouter(x);
     }
 
 

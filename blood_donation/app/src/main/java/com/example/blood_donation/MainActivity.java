@@ -10,11 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
-
 public class MainActivity extends AppCompatActivity {
-ListView liste;
-TextView res;
-DonneurDaO dao;
+    ListView liste;
+    TextView res;
+    DonneurDaO dao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +21,8 @@ DonneurDaO dao;
         liste=findViewById(R.id.listeview);
         res=findViewById(R.id.res);
         dao=new DonneurDaO(getApplicationContext());
+
+
         Cursor c=dao.afficher();
         if( c.getCount()==0 ){
             //empty
@@ -43,7 +44,7 @@ DonneurDaO dao;
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.appbar, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

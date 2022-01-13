@@ -4,14 +4,16 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 public class DonneurDaO {
     String TABLE_NAME="donneur";
-    DATAbaseOpenHelper hanlder;
-//id INTEGER PRIMARY KEY, name TEXT, groupe TEXT, etat BOOL
+    Basehandler hanlder;
+    //id INTEGER PRIMARY KEY, name TEXT, groupe TEXT, etat BOOL
+
+
+    //constructur
     public DonneurDaO(Context context) {
         // this.hanlder = hanlder;
-        hanlder = new DATAbaseOpenHelper(context,"", null,1);
+        hanlder = new Basehandler(context,"", null,1);
     }
 
     public void ajouter(Donneur p) {
@@ -21,7 +23,7 @@ public class DonneurDaO {
         values.put("name", p.getNom());
         values.put("groupe", p.getGroupe());
         values.put("etat", p.getEtat());
-        // Insertion Ligne (Row)
+        // Insertion Ligne (Row)
         db.insert(TABLE_NAME, null, values);
         db.close(); // fermer la connection BD
     }
@@ -34,11 +36,12 @@ public class DonneurDaO {
         SQLiteDatabase db = hanlder.getReadableDatabase();
         String message="";
         Cursor c=db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
-//We can test the c.getCount()==0 
+
+
+      //We can test the c.getCount()==0
       /* while (c.moveToNext()) {
              message=message+ c.getInt(0) + c.getString(1)+c.getInt(2)+"____";
-       }*/
-        return c;
+       }*/        return c;
     }
     public void modifier(Integer i, Donneur p) {
         SQLiteDatabase db = hanlder.getWritableDatabase();
@@ -56,7 +59,7 @@ public class DonneurDaO {
         Donneur p = null;
         //Cursor c=db.rawQuery("SELECT * FROM product where id='"+i+"'",null);
         Cursor c = db.rawQuery("SELECT * FROM donneur where id=?", new String[] { i + "" });
-//We can test the c.getCount()==0 
+//We can test the c.getCount()==0
         while (c.moveToNext()) {
             //message=message+ c.getInt(0) + c.getString(1)+c.getInt(2)+"____";
             p=new Donneur(c.getInt(0),c.getString(1),c.getString(2),c.getInt(3));
